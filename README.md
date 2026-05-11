@@ -23,6 +23,23 @@ AI Quiz Generator and Text Summarizer is an AI-based educational web application
 - HTML and CSS
 
 ## How to Run
+
+Install the required libraries:
+
+```python
+!pip install -q gradio groq
+
+Connect the Groq API key:
+from google.colab import userdata
+from groq import Groq
+
+api_key = userdata.get("GROQ_API_KEY")
+
+if not api_key:
+    raise ValueError("GROQ_API_KEY is missing. Add it in Colab Secrets.")
+
+client = Groq(api_key=api_key)
+
 How to Use
 	Quiz Generator
 	Paste the study text.
@@ -51,20 +68,3 @@ Future Improvements
 Conclusion
 
 	This project helps students study more effectively by converting text into quizzes and summaries using artificial intelligence.
-
-Install the required libraries:
-
-```python
-!pip install -q gradio groq
-
-Connect the Groq API key:
-from google.colab import userdata
-from groq import Groq
-
-api_key = userdata.get("GROQ_API_KEY")
-
-if not api_key:
-    raise ValueError("GROQ_API_KEY is missing. Add it in Colab Secrets.")
-
-client = Groq(api_key=api_key)
-
